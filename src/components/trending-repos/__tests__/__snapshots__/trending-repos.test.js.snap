@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Trending Repos component should render the correct page elements 1`] = `
+<DocumentFragment>
+  <div
+    class="wrapper"
+  >
+    <h1>
+      Most starred github repositories in the last 7 days
+    </h1>
+  </div>
+</DocumentFragment>
+`;

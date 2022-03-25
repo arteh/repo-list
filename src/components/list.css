@@ -1,0 +1,46 @@
+.item {
+  display: flex;
+  color: #4f5d75;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgb(169 169 169 / 70%);
+}
+
+.name {
+  font-weight: bold;
+  overflow-wrap: anywhere;
+  flex: 0.2;
+}
+
+.description {
+  flex: 0.6;
+}
+
+.stars {
+  flex: 0.1;
+}
+
+.favorite-btn {
+  flex: 0.1;
+}
+
+.name,
+.description,
+.stars {
+  border-right: 2px solid #ef8354;
+  padding: 5px;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+button > svg {
+  width: 30px;
+  height: 30px;
+}

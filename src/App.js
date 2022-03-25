@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+
+import { FavoritesList } from "./components/favorites-list/favorites-list";
+import { TrendingRepos } from "./components/trending-repos/trending-repos";
+
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div className="nav">
+          <ul>
+            <li className="nav-link">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="nav-link">
+              <Link to="favorites-list">Favorites List</Link>
+            </li>
+          </ul>
+        </div>
+
+        <Routes>
+          <Route index element={<TrendingRepos />} />
+          <Route exact path="/" element={<TrendingRepos />} />
+          <Route exact path="favorites-list" element={<FavoritesList />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
