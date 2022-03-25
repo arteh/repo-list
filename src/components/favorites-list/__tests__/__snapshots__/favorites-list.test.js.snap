@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Favorites List component should render the correct page elements 1`] = `
+<DocumentFragment>
+  <div>
+    <h1>
+      My favorite github repositories
+    </h1>
+  </div>
+</DocumentFragment>
+`;

@@ -13,6 +13,12 @@ export const TrendingRepos = () => {
   ).toISOString();
   const formattedDate = sevenDaysAgo.substring(0, sevenDaysAgo.indexOf("T"));
 
+  // Handle favorite button
+  const handleFavorite = (item) => {
+    localStorage.setItem(`favorite-${item.id}`, JSON.stringify(item));
+    setFaveList([...faveList, item])
+  };
+
   // Get data from github
   useEffect(() => {
     const url = `https://api.github.com/search/repositories?q=created:%3E${formattedDate}&sort=stars&order=desc`;
@@ -27,7 +33,7 @@ export const TrendingRepos = () => {
       }
     };
     fetchData();
-  }, [formattedDate]);
+  }, []);
 
   // Get favorite list from local storage
   useEffect(() => {
@@ -46,17 +52,15 @@ export const TrendingRepos = () => {
     }
   }, []);
 
-  const handleFavorite = (item) => {
-    localStorage.setItem(`favorite-${item.id}`, JSON.stringify(item));
-  };
+
 
   return (
-    <div>
+    <div className="wrapper">
       <h1>Most starred github repositories in the last 7 days</h1>
 
       {repoList ? (
         repoList?.map((item, index) => (
-          <div className="item">
+          <div className="item" key={`repo-index-${index}`}>
             <div className="name">{item?.name}</div>
             <div className="description">{item?.description}</div>
             <div className="stars">

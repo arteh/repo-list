@@ -27,7 +27,7 @@ export const FavoritesList = () => {
 
       {faveList
         ? faveList?.map((item, index) => (
-            <div className="item">
+            <div className="item" key={`fave-index-${index}`}>
               <div className="name">{item?.name}</div>
               <div className="description">{item?.description}</div>
               <div className="stars">
