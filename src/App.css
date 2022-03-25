@@ -1,5 +1,30 @@
 .App {
   text-align: center;
-  /* background-color: rgb(181, 127, 80) */
-  background-color: #0F0326;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  
+  justify-content: center;
+}
+
+.nav-link {
+  list-style: none;  
+  font-size: 20px;
+  margin: 10px 10px;
+  padding: 15px 15px;
+  border-radius: 5px;
+  background-color: #EF8354;
+  box-shadow: 0 0 10px rgb(169 169 169 / 70%);
+
+}
+
+.nav-link > a {
+  color: #4F5D75;
+  text-decoration: none;
+}
+
+h1 {
+  color: #4f5d75;
 }

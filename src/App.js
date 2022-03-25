@@ -9,12 +9,23 @@ function App() {
   return (
     <div className="App">
       <Router>
+
+      <div className="nav">
+          <ul>
+            <li className="nav-link"><Link to="/">Home</Link></li>
+            <li className="nav-link"><Link to="favorites-list">Favorites List</Link></li>
+          </ul>
+        </div>
+
         <Routes>
-          <Route exact path="/" element={<h1>Home Page</h1>} />
-          <Route exact path="page1" element={<TrendingRepos />} />
-          <Route exact path="page2" element={<FavoritesList />} />
+          <Route index element={<TrendingRepos />} />
+          <Route exact path="/" element={<TrendingRepos />} />
+          <Route exact path="favorites-list" element={<FavoritesList />} />
         </Routes>
+
+    
       </Router>
+ 
     </div>
   );
 }
