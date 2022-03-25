@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineHeart, AiFillHeart, AiFillStar } from "react-icons/ai";
 
-import "./list.css";
+import "../../components/list.css";
 
 export const TrendingRepos = () => {
   const [repoList, setRepoList] = useState([]);
@@ -21,7 +21,6 @@ export const TrendingRepos = () => {
       try {
         const response = await fetch(url);
         const json = await response.json();
-        console.log("json response", json);
         setRepoList(json.items);
       } catch (error) {
         console.log("error", error);
@@ -53,9 +52,7 @@ export const TrendingRepos = () => {
 
   return (
     <div>
-      <h1>
-        Most starred github repositories in the last 7 days
-      </h1>
+      <h1>Most starred github repositories in the last 7 days</h1>
 
       {repoList ? (
         repoList?.map((item, index) => (

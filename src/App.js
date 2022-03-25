@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 
-import { FavoritesList } from "./components/favorites-list";
-import { TrendingRepos } from "./components/trending-repos";
+import { FavoritesList } from "./components/favorites-list/favorites-list";
+import { TrendingRepos } from "./components/trending-repos/trending-repos";
 
 import "./App.css";
 
@@ -9,11 +9,14 @@ function App() {
   return (
     <div className="App">
       <Router>
-
-      <div className="nav">
+        <div className="nav">
           <ul>
-            <li className="nav-link"><Link to="/">Home</Link></li>
-            <li className="nav-link"><Link to="favorites-list">Favorites List</Link></li>
+            <li className="nav-link">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="nav-link">
+              <Link to="favorites-list">Favorites List</Link>
+            </li>
           </ul>
         </div>
 
@@ -22,10 +25,7 @@ function App() {
           <Route exact path="/" element={<TrendingRepos />} />
           <Route exact path="favorites-list" element={<FavoritesList />} />
         </Routes>
-
-    
       </Router>
- 
     </div>
   );
 }
